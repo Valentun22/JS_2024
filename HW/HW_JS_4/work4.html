@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+// Task1
+// - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+
+    function calc1(a, b) {
+        return a * b
+    }
+    console.log(calc1(5, 10))
+
+// Task2
+// - створити функцію яка обчислює та повертає площу кола з радіусом r
+
+    function calc2(r) {
+        return Math.PI * r * r
+    }
+    console.log(calc2(3))
+
+// Task3
+// - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+
+    function calc3(r, h) {
+        return (2 * Math.PI * r * r) + (2 * Math.PI * r * h)
+    }
+    console.log(calc3(2, 6))
+
+// Task4
+// - створити функцію яка приймає масив та виводить кожен його елемент
+
+    function task4(arr) {
+        for (let item of arr) {
+            console.log('item : ', item)
+        }
+    }
+    task4([55, 432, 22, 'Hello'])
+
+// Task5
+// - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+    function task5( text ) {
+        document.write(`<p>${text}</p>`)
+    }
+    task5('Параграф')
+
+// Task6
+// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+
+    function task6( text ) {
+        document.write('<ul>')
+        for (let i = 0; i < 3; i++) {
+            document.write(`<li>${text}</li>`) }
+        document.write(`</ul>`)
+    }
+    task6('Task6')
+
+// Task7
+// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість
+// li визначається другим аргументом, який є числовим (тут використовувати цикл)
+
+    function task7( text, numb ) {
+        document.write(`<ul>`)
+        for (let i = 0; i < numb; i++) {
+            document.write(`<li>${text}</li>`) }
+        document.write(`</ul>`)
+    }
+    task7('Task7', 7)
+
+// Task8
+// - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+
+    function task8( array ) {
+        document.write(`<ul>`)
+        for (let items of array) {
+            document.write(`<li>${items}</li>`) }
+        document.write(`<ul>`)
+    }
+    task8([55, 12, 33,'hello', true,])
+
+// Task9
+// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+
+    const users = [
+        {id: 1, name: 'vasya', age: 31},
+        {id: 2, name: 'petya', age: 30},
+        {id: 3, name: 'kolya', age: 29},
+        {id: 4, name: 'olya', age: 28},
+        {id: 5, name: 'max', age: 30},];
+
+    function task9( array ) {
+        for (const user of array) {
+            document.write(`<div>
+                                <p>Id: ${user.id}</p>
+                                <p>Name: ${user.name}</p>
+                                <p>Age: ${user.age}</p>
+                                <p>------------------</p>
+                            </div>`)
+        }
+    }
+    task9(users)
+
+// Task10
+// - створити функцію яка повертає найменьше число з масиву
+
+    function taskTen(array) {
+        let min = array[0]
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i]  }
+        }
+        return min
+    }
+    console.log('Min. ', taskTen([6, 10, 87]))
+
+// Task11
+// - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+
+    function sum(arr) {
+        let result = 0
+        for (let i = 0; i < arr.length; i++) {
+            result += arr[i]
+        }
+        return result
+    }
+    console.log('Sum : ', sum([1, 2, 10]))
+
+// Task12
+// - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
+// Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+
+    function swap(arr, index1, index2) {
+        const numIndex1 = arr[index1]
+        arr[index1]=arr[index2]
+        arr[index2]=numIndex1
+        return  arr
+    }
+    console.log(swap([11,22,33,44],0,1))
+
+// Task13
+// - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+// Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+
+    function exchange(sumUAH, currencyValues, exchangeCurrency) {
+        for (let money of currencyValues) {
+            if (money.currency === exchangeCurrency) {
+                return `${sumUAH / money.value} ${exchangeCurrency}`}
+        }
+        return 'Wrong currency!'
+    }
+    const currencyValues = [
+        {currency: 'USD', value: 40},
+        {currency: 'EUR', value: 42}, ]
+
+    const result = exchange(10000, currencyValues, 'USD')
+    console.log('conversion - ', result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
