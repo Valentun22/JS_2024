@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3 class="numbCalcUp">0</h3>
+
+<script>
+
+    // Task 2
+    // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+
+    let taskTwo = document.getElementsByClassName('numbCalcUp')[0];
+    let upNumb = JSON.parse(localStorage.getItem('number')) || parseFloat(taskTwo.outerText);
+    upNumb += 1;
+    taskTwo.innerText = upNumb;
+    localStorage.setItem('number', JSON.stringify(upNumb));
+
+</script>
+
+</body>
+</html>

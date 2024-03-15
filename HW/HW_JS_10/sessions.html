@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html.
+    // Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
+
+    let div = document.createElement('div')
+    document.body.appendChild(div)
+    let ol = document.createElement('ol')
+    let visits = JSON.parse(localStorage.getItem('sessions')) || []
+    console.log(visits);
+    for (const visit of visits) {
+        let li = document.createElement('li')
+        li.innerText = `${visit}`
+        ol.append(li)
+    }
+    div.append(ol)
+
+</script>
+
+
+
+
+</body>
+</html>
