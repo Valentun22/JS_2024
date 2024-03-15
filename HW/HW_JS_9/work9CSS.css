@@ -1,0 +1,27 @@
+.header{
+    border: #ff0000 solid 5px;
+    margin: 15px;
+}
+.table{
+    border: blue solid 3px;
+    margin: 10px;
+    padding-left: 30px;
+}
+.tableNamb{
+     border: blue solid 3px;
+     margin: 10px;
+     padding-left: 30px;
+}
+.borderAll>li {
+    margin: 5px;
+    border: blue solid 2px;
+    padding-left: 10px;
+}.borderName{
+     border: blue solid 3px;
+     margin: 10px;
+     padding-left: 30px;
+ }
+.borderAll{
+    border: blue solid 3px;
+    margin: 10px;
+}
